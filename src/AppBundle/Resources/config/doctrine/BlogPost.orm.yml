@@ -11,10 +11,17 @@ AppBundle\Entity\BlogPost:
     fields:
         title:
             type: string
-            length: 255
+            length: '255'
         body:
-            type: string
-            length: 255
+            type: text
         draft:
             type: boolean
     lifecycleCallbacks: {  }
+
+    manyToOne:
+        category:
+            targetEntity: Category
+            inversedBy: blogPosts
+            joinColumn:
+                name: category_id
+                referencedColumnName: id

@@ -1,11 +1,11 @@
 <?php
 
 namespace AppBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Class Category
- * @package AppBundle\Entity
+ * Category
  */
 class Category
 {
@@ -35,7 +35,7 @@ class Category
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -44,9 +44,8 @@ class Category
         return $this->id;
     }
 
-
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -60,7 +59,7 @@ class Category
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -69,4 +68,3 @@ class Category
         return $this->name;
     }
 }
-

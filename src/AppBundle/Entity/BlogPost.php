@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 /**
  * BlogPost
  */
@@ -25,10 +26,11 @@ class BlogPost
     /**
      * @var bool
      */
-    private $draft;
+    private $draft = false;
 
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="blogPosts")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
 
@@ -49,7 +51,7 @@ class BlogPost
     }
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -59,7 +61,7 @@ class BlogPost
     }
 
     /**
-     * Set title
+     * Set title.
      *
      * @param string $title
      *
@@ -73,7 +75,7 @@ class BlogPost
     }
 
     /**
-     * Get title
+     * Get title.
      *
      * @return string
      */
@@ -83,7 +85,7 @@ class BlogPost
     }
 
     /**
-     * Set body
+     * Set body.
      *
      * @param string $body
      *
@@ -97,7 +99,7 @@ class BlogPost
     }
 
     /**
-     * Get body
+     * Get body.
      *
      * @return string
      */
@@ -107,9 +109,9 @@ class BlogPost
     }
 
     /**
-     * Set draft
+     * Set draft.
      *
-     * @param boolean $draft
+     * @param bool $draft
      *
      * @return BlogPost
      */
@@ -121,7 +123,7 @@ class BlogPost
     }
 
     /**
-     * Get draft
+     * Get draft.
      *
      * @return bool
      */
@@ -130,4 +132,3 @@ class BlogPost
         return $this->draft;
     }
 }
-
